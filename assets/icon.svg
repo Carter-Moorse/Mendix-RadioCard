@@ -1,0 +1,46 @@
+<svg
+    width="64"
+    height="64"
+    viewBox="0 0 64 64"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Card box -->
+  <rect
+      x="4"
+      y="4"
+      width="56"
+      height="56"
+      rx="6"
+      ry="6"
+      style="fill:none;stroke:#3cb5d6;stroke-width:2.5;" />
+
+  <!-- Radio outer circle -->
+  <circle
+      cx="16"
+      cy="22"
+      r="6"
+      style="fill:none;stroke:#3cb5d6;stroke-width:2.5;" />
+
+  <!-- Radio inner dot -->
+  <circle
+      cx="16"
+      cy="22"
+      r="3"
+      style="fill:#3cb5d6;stroke:none;" />
+
+  <!-- Title line -->
+  <path
+      d="M 26 22 H 50"
+      style="fill:none;stroke:#3cb5d6;stroke-width:2.5;" />
+
+  <!-- Description line 1 -->
+  <path
+      d="M 26 34 H 48"
+      style="fill:none;stroke:#3cb5d6;stroke-width:2.5;" />
+
+  <!-- Description line 2 -->
+  <path
+      d="M 26 42 H 44"
+      style="fill:none;stroke:#3cb5d6;stroke-width:2.5;" />
+</svg>
