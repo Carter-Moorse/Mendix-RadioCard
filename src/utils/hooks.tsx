@@ -91,7 +91,7 @@ const getBaseClass = ({
     if (cardSize === "small") result += " radio-card-sm";
     else if (cardSize === "large") result += " radio-card-lg";
 
-    return result;
+    return result.trimStart();
 }
 
 /**
@@ -113,6 +113,7 @@ export const useRadioCard = (props: RadioCardContainerProps) => {
     const currentValue = getDisplayValue(field?.value, field);
     const position = props.radioPosition ?? "left";
     const alignment = props.cardAlignment ?? "center";
+    const error = field.validation;
 
     const onChangeOption = (item: GenericItem<any> | undefined, value: any) => {
         if (item && !item?.readOnly) item.setValue(value);
@@ -158,7 +159,7 @@ export const useRadioCard = (props: RadioCardContainerProps) => {
         }
     }
 
-    return { items: getItems(), className: getBaseClass(props) };
+    return { items: getItems(), className: getBaseClass(props), error };
 }
 
 export const useRadioCardPreview = (props: RadioCardPreviewProps) => {

@@ -7,7 +7,7 @@ import { RadioCardContainerProps } from "../typings/RadioCardProps";
 import "./ui/RadioCard.css";
 
 export function RadioCard(props: RadioCardContainerProps): ReactElement {
-    const { items, className } = useRadioCard(props);
+    const { items, className, error } = useRadioCard(props);
 
     return <RadioCardGroup
         name={props.name}
@@ -15,5 +15,6 @@ export function RadioCard(props: RadioCardContainerProps): ReactElement {
         className={className}
         items={items}
         tabIndex={props.tabIndex}
+        error={error}
     />;
 }
