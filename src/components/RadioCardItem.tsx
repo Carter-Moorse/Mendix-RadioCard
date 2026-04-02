@@ -4,18 +4,18 @@ export type Position = "left" | "right" | "above" | "below";
 export type Alignment = "start" | "center" | "end";
 
 export interface RadioCardItemProps {
-    id?: string,
-    name?: string
-    value?: string
-    checked?: boolean
-    onChange?: React.ChangeEventHandler<HTMLInputElement>
-    disabled?: boolean
-    className?: string
-    columnClassName?: string
-    content?: ReactNode | string
-    position: Position
-    alignment: Alignment
-    selectedClass?: string
+    id?: string;
+    name?: string;
+    value?: string;
+    checked?: boolean;
+    onChange?: React.ChangeEventHandler<HTMLInputElement>;
+    disabled?: boolean;
+    className?: string;
+    columnClassName?: string;
+    content?: ReactNode | string;
+    position: Position;
+    alignment: Alignment;
+    selectedClass?: string;
 }
 
 const getPositionClass = (position: Position) => {
@@ -34,11 +34,26 @@ const getPositionClass = (position: Position) => {
 
 const getAlignmentClass = (alignment: Alignment) => `radio-card__item--align-${alignment}`;
 
-export function RadioCardItem({ id, name, value, checked, onChange, disabled, className, columnClassName, content, position, alignment, selectedClass }: RadioCardItemProps): ReactElement {
+export function RadioCardItem({
+    id,
+    name,
+    value,
+    checked,
+    onChange,
+    disabled,
+    className,
+    columnClassName,
+    content,
+    position,
+    alignment,
+    selectedClass
+}: RadioCardItemProps): ReactElement {
     const display = content ?? value;
 
-    className += ` ${getPositionClass(position)} ${getAlignmentClass(alignment)}`
-    if (checked) className += ` radio-card__item-selected ${selectedClass || ""}`.trimEnd();
+    className += ` ${getPositionClass(position)} ${getAlignmentClass(alignment)}`;
+    if (checked) {
+        className += ` radio-card__item-selected ${selectedClass || ""}`.trimEnd();
+    }
 
     return (
         <div className={`radio-card__col ${columnClassName}`}>

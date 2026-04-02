@@ -1,5 +1,5 @@
 import { RadioCardPreviewProps } from "../typings/RadioCardProps";
-import { hideNestedPropertiesIn, hidePropertiesIn } from "@mendix/pluggable-widgets-tools"
+import { hideNestedPropertiesIn, hidePropertiesIn } from "@mendix/pluggable-widgets-tools";
 
 export type Platform = "web" | "desktop";
 
@@ -113,28 +113,68 @@ export function getProperties(
 
     // Attribute path
     if (_values.type === "attribute") {
-        hidePropertiesIn(defaultProperties, _values, ["reference", "selectableObjects", "displayValueReference", "dynamicClassesReference", "contentReference", "onChangeReference"]);
-        if (_values.customContent) hidePropertiesIn(defaultProperties, _values, ["desktopWidth", "desktopSize", "tabletWidth", "tabletSize", "phoneWidth", "phoneSize", "dynamicClasses"]);
-        else hidePropertiesIn(defaultProperties, _values, ["displayItems"]);
+        hidePropertiesIn(defaultProperties, _values, [
+            "reference",
+            "selectableObjects",
+            "displayValueReference",
+            "dynamicClassesReference",
+            "contentReference",
+            "onChangeReference"
+        ]);
+        if (_values.customContent) {
+            hidePropertiesIn(defaultProperties, _values, [
+                "desktopWidth",
+                "desktopSize",
+                "tabletWidth",
+                "tabletSize",
+                "phoneWidth",
+                "phoneSize",
+                "dynamicClasses"
+            ]);
+        } else {
+            hidePropertiesIn(defaultProperties, _values, ["displayItems"]);
+        }
     }
     // Association path
     else if (_values.type === "association") {
-        hidePropertiesIn(defaultProperties, _values, ["attribute", "displayItems", "dynamicClasses", "onChangeAttribute"]);
-        if (_values.customContent) hidePropertiesIn(defaultProperties, _values, ["displayValueReference"]);
-        else hidePropertiesIn(defaultProperties, _values, ["contentReference"]);
+        hidePropertiesIn(defaultProperties, _values, [
+            "attribute",
+            "displayItems",
+            "dynamicClasses",
+            "onChangeAttribute"
+        ]);
+        if (_values.customContent) {
+            hidePropertiesIn(defaultProperties, _values, ["displayValueReference"]);
+        } else {
+            hidePropertiesIn(defaultProperties, _values, ["contentReference"]);
+        }
     }
 
-    if (_values.desktopWidth !== "manual") hidePropertiesIn(defaultProperties, _values, ["desktopSize"]);
-    if (_values.tabletWidth !== "manual") hidePropertiesIn(defaultProperties, _values, ["tabletSize"]);
-    if (_values.phoneWidth !== "manual") hidePropertiesIn(defaultProperties, _values, ["phoneSize"]);
+    if (_values.desktopWidth !== "manual") {
+        hidePropertiesIn(defaultProperties, _values, ["desktopSize"]);
+    }
+    if (_values.tabletWidth !== "manual") {
+        hidePropertiesIn(defaultProperties, _values, ["tabletSize"]);
+    }
+    if (_values.phoneWidth !== "manual") {
+        hidePropertiesIn(defaultProperties, _values, ["phoneSize"]);
+    }
 
     _values.displayItems.forEach((item, index) => {
-        if (item.desktopWidth !== "manual") hideNestedPropertiesIn(defaultProperties, _values, "displayItems", index, ["desktopSize"]);
-        if (item.tabletWidth !== "manual") hideNestedPropertiesIn(defaultProperties, _values, "displayItems", index, ["tabletSize"]);
-        if (item.phoneWidth !== "manual") hideNestedPropertiesIn(defaultProperties, _values, "displayItems", index, ["phoneSize"]);
-    })
+        if (item.desktopWidth !== "manual") {
+            hideNestedPropertiesIn(defaultProperties, _values, "displayItems", index, ["desktopSize"]);
+        }
+        if (item.tabletWidth !== "manual") {
+            hideNestedPropertiesIn(defaultProperties, _values, "displayItems", index, ["tabletSize"]);
+        }
+        if (item.phoneWidth !== "manual") {
+            hideNestedPropertiesIn(defaultProperties, _values, "displayItems", index, ["phoneSize"]);
+        }
+    });
 
-    if (_values.hideRadioInput) hidePropertiesIn(defaultProperties, _values, ["radioPosition"]);
+    if (_values.hideRadioInput) {
+        hidePropertiesIn(defaultProperties, _values, ["radioPosition"]);
+    }
 
     return defaultProperties;
 }

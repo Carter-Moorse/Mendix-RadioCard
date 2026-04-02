@@ -6,13 +6,15 @@ import { useRadioCardPreview } from "./utils/hooks";
 export function preview(props: RadioCardPreviewProps): ReactElement {
     const { items, className } = useRadioCardPreview(props);
 
-    return <RadioCardGroup
-        name={"Preview"}
-        selectedClass={props.selectedClass}
-        className={className}
-        items={items}
-        tabIndex={0}
-    />;
+    return (
+        <RadioCardGroup
+            name={"Preview"}
+            selectedClass={props.selectedClass}
+            className={className}
+            items={items}
+            tabIndex={0}
+        />
+    );
 }
 
 export function getPreviewCss(): string {

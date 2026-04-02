@@ -9,12 +9,14 @@ import "./ui/RadioCard.css";
 export function RadioCard(props: RadioCardContainerProps): ReactElement {
     const { items, className, error } = useRadioCard(props);
 
-    return <RadioCardGroup
-        name={props.name}
-        selectedClass={props.selectedClass}
-        className={className}
-        items={items}
-        tabIndex={props.tabIndex}
-        error={error}
-    />;
+    return (
+        <RadioCardGroup
+            name={props.name}
+            selectedClass={props.selectedClass}
+            className={className}
+            items={items}
+            tabIndex={props.tabIndex}
+            error={error}
+        />
+    );
 }
