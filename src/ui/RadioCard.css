@@ -40,33 +40,15 @@
     flex-direction: column;
 }
 
-.radio-card__item--above.radio-card__item--align-start,
-.radio-card__item--below.radio-card__item--align-start {
-    justify-content: flex-start;
-}
-
-.radio-card__item--above.radio-card__item--align-center,
-.radio-card__item--below.radio-card__item--align-center {
-    justify-content: center;
-}
-
-.radio-card__item--above.radio-card__item--align-end,
-.radio-card__item--below.radio-card__item--align-end {
-    justify-content: flex-end;
-}
-
-.radio-card__item--left.radio-card__item--align-start,
-.radio-card__item--right.radio-card__item--align-start {
+.radio-card__item.radio-card__item--align-start {
     align-items: flex-start;
 }
 
-.radio-card__item--left.radio-card__item--align-center,
-.radio-card__item--right.radio-card__item--align-center {
+.radio-card__item.radio-card__item--align-center {
     align-items: center;
 }
 
-.radio-card__item--left.radio-card__item--align-end,
-.radio-card__item--right.radio-card__item--align-end {
+.radio-card__item.radio-card__item--align-end {
     align-items: flex-end;
 }
 
@@ -74,6 +56,7 @@
 
 .radio-card__content {
     flex: 1;
+    width: 100%;
 }
 
 /* Customising display */
@@ -82,11 +65,20 @@
     width: 100%;
 }
 
-/* Highlighted styling */
-.radio-card-highlight>.radio-card__row>.radio-card__col>.radio-card__item-selected {
+/* Highlighted hover styling */
+.radio-card-hover>.radio-card__row>.radio-card__col>.radio-card__item:hover,
+.radio-card-hover>.radio-card__row>.radio-card__col>.radio-card__item:focus {
+    background-color: var(--form-input-bg-hover);
+}
+
+/* Highlighted selected styling */
+.radio-card-highlight>.radio-card__row>.radio-card__col>.radio-card__item-selected,
+.radio-card-highlight>.radio-card__row>.radio-card__col>.radio-card__item-selected:hover,
+.radio-card-highlight>.radio-card__row>.radio-card__col>.radio-card__item-selected:focus {
     background-color: var(--color-primary-light);
     border-color: var(--brand-primary);
 }
+
 
 /* Hide radio input */
 .radio-card-hideinput>.radio-card__row>.radio-card__col>.radio-card__item>.radio-card__input {

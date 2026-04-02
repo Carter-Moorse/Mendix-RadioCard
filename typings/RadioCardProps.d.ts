@@ -68,6 +68,7 @@ export interface RadioCardContainerProps {
     radioPosition: RadioPositionEnum;
     cardAlignment: CardAlignmentEnum;
     cardSize: CardSizeEnum;
+    highlightHover: boolean;
     highlightSelected: boolean;
     selectedClass: string;
     dynamicClasses?: DynamicValue<string>;
@@ -98,6 +99,7 @@ export interface RadioCardPreviewProps {
     radioPosition: RadioPositionEnum;
     cardAlignment: CardAlignmentEnum;
     cardSize: CardSizeEnum;
+    highlightHover: boolean;
     highlightSelected: boolean;
     selectedClass: string;
     dynamicClasses: string;

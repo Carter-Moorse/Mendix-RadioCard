@@ -13,12 +13,12 @@ import { GenericItem, ItemClassProperties, ResponsiveType, ResponsiveWidth } fro
  * @returns Space seperated class names for `RadioCardItem` column
  */
 const getResponsiveClass = (type: ResponsiveType, width: ResponsiveWidth, size: number | null) => {
-    const getFlag = (prefix: string = "", suffix: string = "") => {
+    const getFlag = (suffix: string = "") => {
         switch (type) {
             case "desktop":
-                return `${prefix}lg${suffix}`;
+                return `lg${suffix}`;
             case "tablet":
-                return `${prefix}md${suffix}`;
+                return `md${suffix}`;
             default:
                 return "";
         }
@@ -26,11 +26,11 @@ const getResponsiveClass = (type: ResponsiveType, width: ResponsiveWidth, size: 
 
     switch (width) {
         case "autofitContent":
-            return `col${getFlag("-", "-")}auto`;
+            return `col-${getFlag("-")}auto`;
         case "manual":
-            return `col${getFlag("-", "-")}${size ?? 12}`
+            return `col-${getFlag("-")}${size ?? 12}`
         default:
-            return `col${getFlag("-")}`;
+            return `col-${getFlag()}`;
     }
 }
 
@@ -71,12 +71,14 @@ const getItemClass = (properties: ItemClassProperties, item?: ObjectItem) => {
  */
 const getBaseClass = ({
     containerClass,
+    highlightHover,
     highlightSelected,
     hideRadioInput,
     fullSizeContainer,
     cardSize
 }: {
     containerClass: string
+    highlightHover: boolean
     highlightSelected: boolean
     hideRadioInput: boolean
     fullSizeContainer: boolean
@@ -84,6 +86,7 @@ const getBaseClass = ({
 }) => {
     var result = "";
     result += `${containerClass || ""}`.trimEnd();
+    if (highlightHover) result += " radio-card-hover";
     if (highlightSelected) result += " radio-card-highlight";
     if (hideRadioInput) result += " radio-card-hideinput";
     if (fullSizeContainer) result += " radio-card-fill";
