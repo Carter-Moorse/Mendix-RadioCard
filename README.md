@@ -1,17 +1,22 @@
-## RadioCard
-[Customisable radio card display]
+<img src="/assets/icon.svg" height="64px" />
+
+# Radio Card - Mendix Pluggable Widget
+Customisable radio card display.
+
+See [Demo](https://radiocarddemo-sandbox.mxapps.io/).
 
 ## Features
-[feature highlights]
+
 
 ## Usage
-[step by step instructions]
+> [!Warning]
+> Requires Mendix Studio Pro 9.19 or later
 
-## Demo project
-[link to sandbox]
+ 1. Add the widget to your project.
+ 2. Place the widget inside some context.
 
 ## Issues, suggestions and feature requests
-[link to GitHub issues]
+Please report any issues to [Mendix-RadioCard/issues](https://github.com/Carter-Moorse/Mendix-RadioCard/issues)
 
 ## Development and contribution
 
@@ -20,5 +25,3 @@
     - the widget will be bundled;
     - the bundle will be included in a `dist` folder in the root directory of the project;
     - the bundle will be included in the `deployment` and `widgets` folder of the Mendix test project.
-
-[specify contribution]
