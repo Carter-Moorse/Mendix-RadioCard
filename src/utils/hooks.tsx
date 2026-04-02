@@ -13,24 +13,24 @@ import { GenericItem, ItemClassProperties, ResponsiveType, ResponsiveWidth } fro
  * @returns Space seperated class names for `RadioCardItem` column
  */
 const getResponsiveClass = (type: ResponsiveType, width: ResponsiveWidth, size: number | null) => {
-    const getFlag = (suffix: string = "") => {
+    const getFlag = (prefix: string = "", suffix: string = "") => {
         switch (type) {
             case "desktop":
-                return `lg${suffix}`;
+                return `${prefix}lg${suffix}`;
             case "tablet":
-                return `md${suffix}`;
+                return `${prefix}md${suffix}`;
             default:
-                return "";
+                return suffix;
         }
     }
 
     switch (width) {
         case "autofitContent":
-            return `col-${getFlag("-")}auto`;
+            return `col${getFlag("-", "-auto")}`;
         case "manual":
-            return `col-${getFlag("-")}${size ?? 12}`
+            return `col${getFlag("-", `-${size ?? 12}`)}`
         default:
-            return `col-${getFlag()}`;
+            return `col${getFlag("-")}`;
     }
 }
 
