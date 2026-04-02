@@ -3,6 +3,9 @@
 # Radio Card - Mendix Pluggable Widget
 Customisable radio card display.
 
+<img src="/assets/example_boolean.png" />
+<img src="/assets/example_enumeration.png" />
+
 See [Demo](https://radiocarddemo-sandbox.mxapps.io/).
 
 ## Features
