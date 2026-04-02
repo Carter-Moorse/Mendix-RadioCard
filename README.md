@@ -6,6 +6,16 @@ Customisable radio card display.
 See [Demo](https://radiocarddemo-sandbox.mxapps.io/).
 
 ## Features
+ - Supports enummeration/boolean attributes and associations
+ - Allows simple text display or fully custom card content using drop-zones
+ - Selectable object lists for enummeration/boolean attributes and associations
+ - Optional custom display items with value expressions and dynamic CSS classes
+ - Responsive sizing controls for desktop, tablet, and phone (auto‑fill, auto‑fit, manual)
+ - Configurable card layout: radio position, card alignment, and card size
+ - Styling options including hover highlight, selected highlight, and custom classes
+ - Container options such as full‑width mode and custom container classes
+ - Built‑in Mendix label, editability, visibility, name, and tab index support
+ - On‑change actions for both attribute and reference selection
 
 
 ## Usage
